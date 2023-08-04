@@ -1,0 +1,24 @@
+---
+
+import Container from '../components/container/Container';
+import PhotoList from '../components/photoList/PhotoList.vue';
+import Layout from '../layouts/Layout.astro';
+import texts from '../texts/texts';
+import Title from '../components/TitleAstro/Title.astro';
+import TitleVue from '../components/photoCard/TitleVue.vue';
+
+
+---
+
+
+
+<Layout title={texts.TITLE}>
+    <Container >
+        <PhotoList listName={['David','Trung']} client:load><Title slot="" title="Just Do It"></Title></PhotoList>
+        <TitleVue client:load></TitleVue>
+    </Container>
+</Layout>
+
+<style>
+	
+</style>
