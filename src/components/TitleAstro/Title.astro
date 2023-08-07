@@ -1,11 +1,17 @@
 ---
+import { get } from '../../pages/api/products/buildwith.json.ts';
 interface Prop {
     title: String
 }
+
+let response = await get(Astro);
+const data = await response.json();
 const {title} = Astro.props as Prop;
 ---
-<h1>{title}</h1>
-
-<script>
-    const numberGlobal = 5
+<h1>{title ? <p>{title}</p> : ''}</h1>
+<p class="text-red-500">{data.url}</p>
+<button class="btnAstro">Change author</button>
+<script>    
+import axios from 'axios';
+axios.get('/api/products/buildwith.json').then(res => console.log('Title Astro',res.data))
 </script>

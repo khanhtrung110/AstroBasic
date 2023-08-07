@@ -1,5 +1,4 @@
 import { atom, onMount, task } from "nanostores";
-
 interface Photo {
   albumId: number;
   id: number;
@@ -13,7 +12,7 @@ interface FetchPhotos {
 }
 
 export const photos = atom<FetchPhotos>({ isLoading: false, data: [] });
-
+export const isAuthor = atom(false);
 
 onMount(photos, () => {
   photos.set({ isLoading: true, data: [] });

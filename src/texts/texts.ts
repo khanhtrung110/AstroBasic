@@ -1,5 +1,5 @@
 const texts = {
-  TITLE: "mix React and Veu in Astro 2.0 project",
+  TITLE: "ASTRO FLY ON SKY",
 };
 
 export default texts;

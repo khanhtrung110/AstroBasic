@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/container/Container";
+import Content from "../components/svelte/Content.svelte"
+const data = Astro.locals;
+---
+<Layout title="About">
+    <Container>
+        <div>
+            <h1 class="text-emerald-400 font-bold text-xl">{data.user}</h1>
+            <Content  client:load/>
+        </div>
+    </Container>
+</Layout>
