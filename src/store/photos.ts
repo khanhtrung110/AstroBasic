@@ -12,7 +12,6 @@ interface FetchPhotos {
 }
 
 export const photos = atom<FetchPhotos>({ isLoading: false, data: [] });
-export const isAuthor = atom(false);
 
 onMount(photos, () => {
   photos.set({ isLoading: true, data: [] });

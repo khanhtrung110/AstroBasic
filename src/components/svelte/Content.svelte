@@ -1,6 +1,6 @@
 <script>
     import axios from 'axios';
-    import { isAuthor } from '../../store/user';
+    import { countNumber } from '../../store/user';
     import { addColor, colors } from '../../store/color';
     import { get } from '../../pages/api/products/buildwith.json.ts';
 	let count = 0;
@@ -12,17 +12,16 @@
         axios.get('/api/products/buildwith.json').then(res => console.log(res.data))
         let response2 = await get(Astro)
         const data = await response2.json();
-        console.log('data',data);
-        isAuthor.set(!$isAuthor);
+        countNumber.set(++$countNumber);
         addColor('blue', '#a0c4ff');
-        console.log('colorItems',colors.get());
-	}
+        console.log('countNumber', $countNumber);
+    }
 </script>
 {#if title}
 	 <h2>{title}</h2>
 {/if}
 
 <button on:click={handleClick}>
-	Clicked {count}
-	{count === 1 ? 'time' : 'times'}
+	Clicked {$countNumber}
+	{$countNumber === 1 ? 'time' : 'times'}
 </button>

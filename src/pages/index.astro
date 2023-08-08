@@ -4,12 +4,17 @@ import PhotoList from "../components/photoList/PhotoList.vue";
 import Layout from "../layouts/Layout.astro";
 import texts from "../texts/texts";
 import Title from "../components/TitleAstro/Title.astro";
+import Content  from "../components/svelte/Content.svelte";
+// let response = await fetch(`${Astro.url.origin}/api/products/buildwith.json`);
+// const data = await response.json();
+
 ---
 
 <Layout title={texts.TITLE}>
   <Container>
+    <Title  title="Yessss" />
+    <Content client:load/>
     <PhotoList listName={["David", "Trung"]} client:load>
-      <Title slot="" title="Just Do It" />
     </PhotoList>
   </Container>
 </Layout>

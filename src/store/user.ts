@@ -1,3 +1,3 @@
 import { atom } from 'nanostores';
 
-export const isAuthor = atom(false);
+export const countNumber = atom(0);
